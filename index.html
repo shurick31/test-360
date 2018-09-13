@@ -7,6 +7,9 @@
   <body>
     <!-- Attachment point for your app -->
     <div id="container"></div>
+    <div style="position:absolute; top:20px; left:20px;">
+      <button onclick="toggleVideo()">Tap to play</button>
+    </div>
     <script src="./client.bundle?platform=vr"></script>
     <script>
       // Initialize the React 360 application
@@ -17,7 +20,17 @@
           assetRoot: 'static_assets/',
         }
       );
+
+      function toggleVideo() {
+        var myVideo = document.getElementsByTagName('video')[0];
+
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+      }
+
+
     </script>
   </body>
 </html>
-
